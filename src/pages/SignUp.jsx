@@ -26,10 +26,20 @@ const SignUp = () => {
         if (error) {
           alert("Oops , Registration Failed.");
           return console.log(error);
+        } else {
+          fetch(import.meta.env.VITE_API + "/adduser", {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: JSON.stringify(result),
+          });
+          alert("User Registration successfull");
+
+          return;
         }
-        alert("User Registration successfull");
         // console.log(result);
-        return;
       }
     );
   };

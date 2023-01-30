@@ -163,7 +163,7 @@ export const NoticeHere = styled.div`
   text-align: center;
 `;
 
-export const ReqTestlink = styled.h1`
+export const ReqTestlink = styled.div`
   margin: 48px 0;
 
   & h1 {

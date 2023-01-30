@@ -33,7 +33,7 @@ const Authenticate = () => {
               console.log("User logged successfully");
               console.log(result);
               localStorage.setItem("userInfo", JSON.stringify(result));
-              navigate("/");
+              navigate("/dashboard");
               return;
             }
           });

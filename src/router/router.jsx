@@ -1,11 +1,13 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
+import AdminDashboard from "../pages/AdminDashboard";
 import Authenticate from "../pages/authenticate/authenticate";
 import Faq from "../pages/Faq";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import AdminRoute from "./AdminRoute/AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
       {
         path: "authenticate",
         element: <Authenticate />,
+      },
+      {
+        path: "dashboard",
+        element: (
+          <AdminRoute>
+            <AdminDashboard />
+          </AdminRoute>
+        ),
       },
     ],
   },
