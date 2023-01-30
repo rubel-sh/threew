@@ -153,7 +153,6 @@ const Home = () => {
           </TransactionHistoryContainer>
         </TransactionContainer>
       </Container>
-      <ModalPopup />
     </>
   );
 };

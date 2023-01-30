@@ -37,6 +37,8 @@ export const HeaderLogo = styled.div`
 export const NavContainer = styled.div`
   display: flex;
   gap: 10px;
+  position: relative;
+  z-index: 100;
   & .selectCrypto {
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -312,5 +314,14 @@ export const SellectWallet = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
+`;
+
+export const FaqHeader = styled.h2`
+  margin: 30px 0;
+  text-align: center;
+  color: #9b1fe9;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
 `;
 export const FormItemm = styled.div``;
