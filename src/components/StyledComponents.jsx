@@ -10,11 +10,6 @@ export const BodyWrapper = styled.div`
   grid-template-rows: auto 1fr auto;
 `;
 
-export const Container = styled.div`
-  max-width: 1320px;
-  margin: 0 auto;
-`;
-
 export const HeaderStyle = styled.div`
   background-color: #fff;
   padding: 1rem 0;
@@ -188,11 +183,13 @@ export const TransactionContainer = styled.div`
 `;
 
 export const ConnectedTo = styled.div`
+  height: 100%;
+  display: flex;
   align-items: center;
   background: #eef2fe;
   border-radius: 1px;
-  display: flex;
   padding: 10px;
+  border: 1px solid black;
 
   & svg {
     color: ${(props) => props.theme.primaryColor};
@@ -249,6 +246,7 @@ export const SendRequestBtn = styled.button`
   font-weight: 600;
   padding: 10px 15px;
   text-transform: capitalize;
+  margin-top: 15px;
 `;
 
 export const TransactionHistoryContainer = styled.div`

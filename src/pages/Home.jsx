@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import {
   ConnectedTo,
-  Container,
   FormContainer,
   FormItem,
   HistoryBtn,
@@ -16,6 +15,7 @@ import { StatesContext } from "../context/StatesProvider";
 import { AiFillWarning } from "react-icons/ai";
 import ReCAPTCHA from "react-google-recaptcha";
 import HistoryTable from "../components/HistoryTable";
+import Container from "../components/Container";
 
 const Home = () => {
   const { selectCrypto } = useContext(StatesContext);
@@ -89,70 +89,68 @@ const Home = () => {
     <>
       <NoticeHere>Notice here</NoticeHere>
       <Container>
-        <div style={{ padding: "0 20px" }}>
-          <ReqTestlink>
-            <h1>Request testnet LINK</h1>
+        <ReqTestlink>
+          <h1>Request testnet LINK</h1>
+          <p>
+            Get testnet LINK for an account on one of the supported blockchain
+            testnets so you can create and test your own oracle and Chainlinked
+            smart contract
+          </p>
+        </ReqTestlink>
+        <TransactionContainer>
+          <ConnectedTo>
+            <AiFillWarning size={20} />
             <p>
-              Get testnet LINK for an account on one of the supported blockchain
-              testnets so you can create and test your own oracle and
-              Chainlinked smart contract
+              Your wallet is connected to
+              <strong> {selectCrypto.text}</strong>, so you are requesting
+              <strong> {selectCrypto.text}</strong> Link/ETH.
             </p>
-          </ReqTestlink>
-          <TransactionContainer>
-            <ConnectedTo>
-              <AiFillWarning size={20} />
-              <p>
-                Your wallet is connected to
-                <strong> {selectCrypto.text}</strong>, so you are requesting
-                <strong> {selectCrypto.text}</strong> Link/ETH.
-              </p>
-            </ConnectedTo>
-            <FormContainer>
-              <form onSubmit={(e) => e.preventDefault()}>
-                <FormItem>
-                  <label htmlFor="">Wallet Address</label>
-                  <input type="text" placeholder="Your Wallet Address..." />
-                </FormItem>
-                <FormItem>
-                  <label htmlFor="">Request Type</label>
-                  <div>
-                    <input
-                      type="text"
-                      defaultValue="20 Test Link"
-                      disabled
-                      placeholder="Your Wallet Address..."
-                    />
-                    <input
-                      type="text"
-                      defaultValue="0.5 ETH"
-                      disabled
-                      placeholder="Your Wallet Address..."
-                    />
-                  </div>
-                </FormItem>
-                <FormItem>
-                  <ReCAPTCHA sitekey="6Lc5iTgkAAAAAF06r0RRHun94YpaIP3KBbAK8WcZ" />
-                </FormItem>
+          </ConnectedTo>
+          <FormContainer>
+            <form onSubmit={(e) => e.preventDefault()}>
+              <FormItem>
+                <label htmlFor="">Wallet Address</label>
+                <input type="text" placeholder="Your Wallet Address..." />
+              </FormItem>
+              <FormItem>
+                <label htmlFor="">Request Type</label>
+                <div>
+                  <input
+                    type="text"
+                    defaultValue="20 Test Link"
+                    disabled
+                    placeholder="Your Wallet Address..."
+                  />
+                  <input
+                    type="text"
+                    defaultValue="0.5 ETH"
+                    disabled
+                    placeholder="Your Wallet Address..."
+                  />
+                </div>
+              </FormItem>
+              <FormItem>
+                <ReCAPTCHA sitekey="6Lc5iTgkAAAAAF06r0RRHun94YpaIP3KBbAK8WcZ" />
+              </FormItem>
 
-                <SendRequestBtn>Send Request</SendRequestBtn>
-              </form>
-            </FormContainer>
-            <TransactionHistoryContainer>
-              <p>Request History</p>
-              <HistoryBtnTab>
-                {tableData.map((btn, index) => (
-                  <HistoryBtn
-                    onClick={() => handleHistoryBtn(btn, index)}
-                    className={`${toggleTab === index ? "active-tab" : ""}`}
-                  >
-                    {btn.title}
-                  </HistoryBtn>
-                ))}
-              </HistoryBtnTab>
-              <HistoryTable selectedTable={selectedTable} />
-            </TransactionHistoryContainer>
-          </TransactionContainer>
-        </div>
+              <SendRequestBtn>Send Request</SendRequestBtn>
+            </form>
+          </FormContainer>
+          <TransactionHistoryContainer>
+            <p>Request History</p>
+            <HistoryBtnTab>
+              {tableData.map((btn, index) => (
+                <HistoryBtn
+                  onClick={() => handleHistoryBtn(btn, index)}
+                  className={`${toggleTab === index ? "active-tab" : ""}`}
+                >
+                  {btn.title}
+                </HistoryBtn>
+              ))}
+            </HistoryBtnTab>
+            <HistoryTable selectedTable={selectedTable} />
+          </TransactionHistoryContainer>
+        </TransactionContainer>
       </Container>
     </>
   );

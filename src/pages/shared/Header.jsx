@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import {
-  Container,
   HeaderContainer,
   HeaderLogo,
   HeaderStyle,
@@ -12,6 +11,7 @@ import { FaMoneyCheck } from "react-icons/fa";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { StatesContext } from "../../context/StatesProvider";
 import { Link } from "react-router-dom";
+import Container from "../../components/Container";
 
 const Header = () => {
   const { selectCrypto, setSelectCrypto } = useContext(StatesContext);
