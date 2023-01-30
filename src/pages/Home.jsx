@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   ConnectedTo,
   Container,
   FormContainer,
   FormItem,
+  HistoryBtn,
+  HistoryBtnTab,
   NoticeHere,
   ReqTestlink,
   SendRequestBtn,
@@ -13,9 +15,69 @@ import {
 import { StatesContext } from "../context/StatesProvider";
 import { AiFillWarning } from "react-icons/ai";
 import ReCAPTCHA from "react-google-recaptcha";
+import HistoryTable from "../components/HistoryTable";
 
 const Home = () => {
   const { selectCrypto } = useContext(StatesContext);
+  const [selectedTable, setSelectedTable] = useState({});
+  const tableData = [
+    {
+      id: 1,
+      title: "ETH Transaction History",
+      data: [
+        {
+          time: "12:30 AM",
+          amount: "468",
+          hash: "4s8er5s5fe57rjmxnfuewrurks",
+        },
+        {
+          time: "10:40 PM",
+          amount: "634",
+          hash: "fghgfh546gf65h45gfh4gf4",
+        },
+        {
+          time: "12:30 AM",
+          amount: "750",
+          hash: "gf6798ew7gdf7g564dfh564d6fh4",
+        },
+        {
+          time: "03:30 AM",
+          amount: "622",
+          hash: "fdh545df4gh6d4f6h54df56h4654",
+        },
+      ],
+    },
+    {
+      id: 2,
+      title: "Testlink Transaction History",
+      data: [
+        {
+          time: "11:00 AM",
+          amount: "452",
+          hash: "gdfghf5h4564h6f5d4",
+        },
+        {
+          time: "06:40 PM",
+          amount: "354",
+          hash: "hgf54h564dgf6h",
+        },
+        {
+          time: "11:55 AM",
+          amount: "786",
+          hash: "hs466dfs4h654",
+        },
+        {
+          time: "06:30 AM",
+          amount: "999",
+          hash: "fgh56gf4h654gdf6",
+        },
+      ],
+    },
+  ];
+  console.log(selectedTable);
+  // Select History table we page loads
+  useEffect(() => setSelectedTable(tableData[0]), []);
+
   return (
     <>
       <NoticeHere>Notice here</NoticeHere>
@@ -65,7 +127,17 @@ const Home = () => {
               <SendRequestBtn>Send Request</SendRequestBtn>
             </form>
           </FormContainer>
-          <TransactionHistoryContainer></TransactionHistoryContainer>
+          <TransactionHistoryContainer>
+            <p>Request History</p>
+            <HistoryBtnTab>
+              {tableData.map((btn) => (
+                <HistoryBtn onClick={() => setSelectedTable(btn)}>
+                  {btn.title}
+                </HistoryBtn>
+              ))}
+            </HistoryBtnTab>
+            <HistoryTable selectedTable={selectedTable} />
+          </TransactionHistoryContainer>
         </TransactionContainer>
       </Container>
     </>

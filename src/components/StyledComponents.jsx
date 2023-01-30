@@ -233,7 +233,41 @@ export const SendRequestBtn = styled.button`
   font-weight: 600;
   padding: 10px 15px;
   text-transform: capitalize;
-  margin-top: 15px;
 `;
-export const TransactionHistoryContainer = styled.div``;
+
+export const TransactionHistoryContainer = styled.div`
+  margin-top: 20px;
+
+  & > p {
+    font-weight: 700;
+  }
+`;
+export const HistoryBtnTab = styled.div``;
+
+export const HistoryBtn = styled.div`
+  background: #00f;
+  color: #fff;
+  display: inline-block;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-right: 10px;
+  padding: 10px 15px;
+  user-select: none;
+  margin-right: 10px;
+`;
+export const Table = styled.div`
+  border-collapse: collapse;
+  margin-top: 15px;
+  max-width: 500px;
+  overflow-x: scroll;
+
+  & td,
+  th {
+    border: 1px solid #e7e7e7;
+    border-collapse: collapse;
+    padding: 2px 5px;
+    text-align: center;
+  }
+`;
 export const FormItemm = styled.div``;
