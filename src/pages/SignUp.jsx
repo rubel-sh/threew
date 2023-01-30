@@ -7,6 +7,7 @@ import {
   LoginRegisterFooter,
   LoginRegisterForm,
 } from "../components/StyledComponents";
+import { auth } from "../services/auth0.service";
 
 const SignUp = () => {
   const handleSubmit = (e) => {
@@ -14,7 +15,22 @@ const SignUp = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    console.log(email, password);
+    // Auth0 stuff
+    auth.signup(
+      {
+        email,
+        password,
+        connection: import.meta.env.VITE_AUTH0_REALM,
+      },
+      function (error, result) {
+        if (error) {
+          alert("Oops , Registration Failed.");
+          console.log(error);
+        }
+        alert("User Registration successfull");
+        console.log(result);
+      }
+    );
   };
 
   return (
