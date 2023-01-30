@@ -7,6 +7,7 @@ import {
   LoginRegisterFooter,
   LoginRegisterForm,
 } from "../components/StyledComponents";
+import { auth } from "../services/auth0.service";
 
 const Login = () => {
   const handleSubmit = (e) => {
@@ -14,7 +15,24 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    console.log(email, password);
+    // Auth0 login stuff
+    auth.login(
+      {
+        username: email,
+        password: password,
+        realm: import.meta.env.VITE_AUTH0_REALM,
+        redirectUri: import.meta.env.VITE_AUTH0_LOGIN_REDIRECT_URI,
+        responseType: import.meta.env.VITE_AUTH0_LOGIN_RESPONSE_TYPE,
+      },
+      function (error, result) {
+        if (error) {
+          alert("Oops , Login Failed.");
+          return console.log(error);
+        }
+        alert("Logged in successfully");
+        console.log(result);
+      }
+    );
   };
 
   return (

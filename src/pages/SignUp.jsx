@@ -25,7 +25,7 @@ const SignUp = () => {
       function (error, result) {
         if (error) {
           alert("Oops , Registration Failed.");
-          console.log(error);
+          return console.log(error);
         }
         alert("User Registration successfull");
         console.log(result);
