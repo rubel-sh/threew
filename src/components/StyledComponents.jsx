@@ -12,8 +12,7 @@ export const BodyWrapper = styled.div`
 
 export const Container = styled.div`
   max-width: 1320px;
-  margin-inline: auto;
-  padding: 0 20px;
+  margin: 0 auto;
 `;
 
 export const HeaderStyle = styled.div`
@@ -25,6 +24,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 `;
 
 export const HeaderLogo = styled.div`
@@ -60,6 +60,12 @@ export const NavContainer = styled.div`
       width: 100%;
       height: 100%;
       gap: 5px;
+
+      & > span {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
     }
 
     & .cryptoPopMenu {
@@ -104,6 +110,17 @@ export const NavContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 5px;
+
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+      border: none;
+    }
+
+    & > span {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
   }
 
   & .profileIcon {
@@ -161,7 +178,6 @@ export const ReqTestlink = styled.h1`
     color: ${(props) => props.theme.textColor};
     font-size: 16px;
     line-height: 25px;
-    width: 680px;
   }
 `;
 
@@ -194,7 +210,7 @@ export const FormItem = styled.div`
   flex-direction: column;
   margin-top: 15px;
 
-  & label {
+  & > label {
     color: ${(props) => props.theme.primaryColor};
     font-weight: 600;
     font-size: 14px;
@@ -261,17 +277,14 @@ export const HistoryBtn = styled.div`
   user-select: none;
   margin-right: 10px;
 `;
-export const Table = styled.div`
+export const Table = styled.table`
   border-collapse: collapse;
+  border-spacing: 0;
   margin-top: 15px;
-  max-width: 500px;
-  overflow-x: scroll;
-
   & td,
   th {
     border: 1px solid #e7e7e7;
     border-collapse: collapse;
-    padding: 2px 5px;
     text-align: center;
   }
 `;
