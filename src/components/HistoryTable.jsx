@@ -2,7 +2,6 @@ import React from "react";
 import { Table } from "reactstrap";
 
 const HistoryTable = ({ selectedTable }) => {
-  console.log(selectedTable);
   return (
     <Table bordered responsive style={{ maxWidth: "500px", marginTop: "15px" }}>
       <thead>

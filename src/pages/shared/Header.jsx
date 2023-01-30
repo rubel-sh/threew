@@ -78,8 +78,8 @@ const Header = () => {
                 style={{ display: cryptoMenu ? "block" : "none" }}
               >
                 <ul>
-                  {cryptoLinks.map((link) => (
-                    <li onClick={() => handleCryptoMenu(link)}>
+                  {cryptoLinks.map((link, index) => (
+                    <li key={index} onClick={() => handleCryptoMenu(link)}>
                       <img src={link.img} style={{ width: "20px" }} />
                       <span>{link.text}</span>
                     </li>

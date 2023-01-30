@@ -28,7 +28,8 @@ const SignUp = () => {
           return console.log(error);
         }
         alert("User Registration successfull");
-        console.log(result);
+        // console.log(result);
+        return;
       }
     );
   };

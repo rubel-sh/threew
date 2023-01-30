@@ -30,7 +30,7 @@ const Login = () => {
           return console.log(error);
         }
         alert("Logged in successfully");
-        console.log(result);
+        // console.log(result);
       }
     );
   };

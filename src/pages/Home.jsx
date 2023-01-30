@@ -142,6 +142,7 @@ const Home = () => {
             <HistoryBtnTab>
               {tableData.map((btn, index) => (
                 <HistoryBtn
+                  key={index}
                   onClick={() => handleHistoryBtn(btn, index)}
                   className={`${toggleTab === index ? "active-tab" : ""}`}
                 >
