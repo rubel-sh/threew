@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "auth0-js": "^9.20.1",
     "bootstrap": "^5.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

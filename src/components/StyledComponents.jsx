@@ -324,4 +324,89 @@ export const FaqHeader = styled.h2`
   font-weight: 600;
   text-transform: capitalize;
 `;
+export const LoginRegisterForm = styled.form`
+  & > .title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  & > .submit {
+    background: #9b1fe9;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 20px !important;
+    outline: none;
+    padding: 10px 15px;
+    text-transform: capitalize;
+    width: 100%;
+  }
+`;
+
+export const InputGroup = styled.div`
+  margin-bottom: 15px;
+
+  & label {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  & > input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #b8b4b4;
+    font-size: 14px;
+    outline: none;
+    padding: 10px 0;
+    width: 100%;
+  }
+`;
+export const CenterForm = styled.div`
+  height: 80vh;
+  display: grid;
+  place-items: center;
+`;
+export const LoginRegisterFooter = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  & > .socialLogin {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+
+  & > .switchform {
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+
+    & > a {
+      color: ${(props) => props.theme.primaryColor};
+      text-decoration: none;
+    }
+  }
+  & > .or {
+    font-size: 12px;
+    font-weight: 600;
+  }
+`;
+export const FormWrapper = styled.div`
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px -4px grey;
+  margin: auto;
+  padding: 20px;
+  width: 30%;
+`;
 export const FormItemm = styled.div``;
