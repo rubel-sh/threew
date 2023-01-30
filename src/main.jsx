@@ -9,6 +9,7 @@ import StatesProvider from "./context/StatesProvider";
 
 const theme = {
   primaryColor: "#9b1fe9",
+  textColor: "#6d7380",
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -11,8 +11,9 @@ export const BodyWrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  max-width: 1290px;
+  max-width: 1320px;
   margin-inline: auto;
+  padding: 0 20px;
 `;
 
 export const HeaderStyle = styled.div`
@@ -140,3 +141,99 @@ export const ProfileIcon = styled.div`
     }
   }
 `;
+
+export const NoticeHere = styled.div`
+  background-color: ${(props) => props.theme.primaryColor};
+  padding: 25px 0;
+  color: white;
+  text-align: center;
+`;
+
+export const ReqTestlink = styled.h1`
+  margin: 48px 0;
+
+  & h1 {
+    color: ${(props) => props.theme.primaryColor};
+    font-size: 35px;
+    font-weight: 600;
+  }
+  & p {
+    color: ${(props) => props.theme.textColor};
+    font-size: 16px;
+    line-height: 25px;
+    width: 680px;
+  }
+`;
+
+export const TransactionContainer = styled.div`
+  background-color: #fff;
+  padding: 25px 20px;
+  border: 1px solid #e6e6e6;
+`;
+
+export const ConnectedTo = styled.div`
+  align-items: center;
+  background: #eef2fe;
+  border-radius: 1px;
+  display: flex;
+  padding: 10px;
+
+  & svg {
+    color: ${(props) => props.theme.primaryColor};
+    margin-right: 10px;
+  }
+`;
+
+export const FormContainer = styled.div`
+  width: 50%;
+  margin-top: 15px;
+`;
+
+export const FormItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+
+  & label {
+    color: ${(props) => props.theme.primaryColor};
+    font-weight: 600;
+    font-size: 14px;
+  }
+  & > input {
+    border: 1px solid #eee;
+    border-radius: 3px;
+    margin-top: 5px !important;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 13px;
+  }
+  & > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    & > input {
+      border: 1px solid #eee;
+      border-radius: 3px;
+      margin-top: 5px !important;
+      outline: none;
+      padding: 10px;
+      width: 100%;
+      font-size: 13px;
+    }
+  }
+`;
+export const SendRequestBtn = styled.button`
+  background: ${(props) => props.theme.primaryColor};
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 15px;
+  text-transform: capitalize;
+  margin-top: 15px;
+`;
+export const TransactionHistoryContainer = styled.div``;
+export const FormItemm = styled.div``;
