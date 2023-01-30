@@ -16,9 +16,10 @@ import { AiFillWarning } from "react-icons/ai";
 import ReCAPTCHA from "react-google-recaptcha";
 import HistoryTable from "../components/HistoryTable";
 import Container from "../components/Container";
+import ModalPopup from "../components/ModalPopup";
 
 const Home = () => {
-  const { selectCrypto } = useContext(StatesContext);
+  const { selectCrypto, modal, setModal } = useContext(StatesContext);
   const [selectedTable, setSelectedTable] = useState({});
   const [toggleTab, setToggleTab] = useState(0);
 
@@ -76,7 +77,7 @@ const Home = () => {
       ],
     },
   ];
-  console.log(selectedTable);
+
   // Select History table we page loads
   useEffect(() => setSelectedTable(tableData[0]), []);
 
@@ -152,6 +153,7 @@ const Home = () => {
           </TransactionHistoryContainer>
         </TransactionContainer>
       </Container>
+      <ModalPopup />
     </>
   );
 };

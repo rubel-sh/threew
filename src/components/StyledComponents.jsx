@@ -189,11 +189,13 @@ export const ConnectedTo = styled.div`
   background: #eef2fe;
   border-radius: 1px;
   padding: 10px;
-  border: 1px solid black;
 
   & svg {
     color: ${(props) => props.theme.primaryColor};
     margin-right: 10px;
+  }
+  & > p {
+    margin-bottom: 0;
   }
 `;
 
@@ -284,6 +286,31 @@ export const Table = styled.table`
     border: 1px solid #e7e7e7;
     border-collapse: collapse;
     text-align: center;
+  }
+`;
+export const SellectWallet = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  & > div {
+    background-color: #f5f7fd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    & > p {
+      color: ${(props) => props.theme.primaryColor};
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
 `;
 export const FormItemm = styled.div``;

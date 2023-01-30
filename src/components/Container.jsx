@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 const MaxWidth = styled.div`
   max-width: 1320px;

@@ -14,7 +14,8 @@ import { Link } from "react-router-dom";
 import Container from "../../components/Container";
 
 const Header = () => {
-  const { selectCrypto, setSelectCrypto } = useContext(StatesContext);
+  const { selectCrypto, setSelectCrypto, setModal, modal } =
+    useContext(StatesContext);
   const [cryptoMenu, setCryptoMenu] = useState(false);
   const [profileMenu, setProfileMenu] = useState(false);
 
@@ -48,6 +49,7 @@ const Header = () => {
   // Select 1st link on load
   useEffect(() => setSelectCrypto(cryptoLinks[0]), []);
 
+  const toggle = () => setModal(!modal);
   const handleCryptoMenu = (link) => {
     setSelectCrypto(link);
     setCryptoMenu(!cryptoMenu);
@@ -86,7 +88,7 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="selectWalet">
+            <div className="selectWalet" onClick={toggle}>
               <FaMoneyCheck />
               <span>Connect Wallet</span>
             </div>
