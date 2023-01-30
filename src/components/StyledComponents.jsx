@@ -27,11 +27,15 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderLogo = styled.div`
-  color: ${(props) => props.theme.primaryColor};
-  font-family: Varela Round, sans-serif;
-  font-size: 25px;
-  font-weight: 600;
   cursor: pointer;
+
+  & a {
+    color: ${(props) => props.theme.primaryColor};
+    font-family: Varela Round, sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+  }
 `;
 
 export const NavContainer = styled.div`
@@ -52,6 +56,8 @@ export const NavContainer = styled.div`
     & .cryptoState {
       display: flex;
       align-items: center;
+      width: 100%;
+      height: 100%;
       gap: 5px;
     }
 
@@ -70,6 +76,7 @@ export const NavContainer = styled.div`
       & ul {
         width: 100%;
         padding: 0;
+        margin: 0;
         & li {
           display: flex;
           align-items: center;
@@ -106,5 +113,30 @@ export const NavContainer = styled.div`
     background-color: #e9e9e9;
     color: rgb(109 114 128 / 1);
     cursor: pointer;
+  }
+`;
+
+export const ProfileIcon = styled.div`
+  position: relative;
+
+  & .profileMenu {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    box-shadow: 0 4px 9px -8px grey;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+
+    & a {
+      padding: 5px 20px;
+      text-decoration: none;
+      color: #6d7380;
+    }
   }
 `;
