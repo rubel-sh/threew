@@ -242,11 +242,16 @@ export const TransactionHistoryContainer = styled.div`
     font-weight: 700;
   }
 `;
-export const HistoryBtnTab = styled.div``;
+export const HistoryBtnTab = styled.div`
+  & .active-tab {
+    background: #00f;
+    color: white;
+  }
+`;
 
 export const HistoryBtn = styled.div`
-  background: #00f;
-  color: #fff;
+  background: #fff;
+  color: #1a1a1a;
   display: inline-block;
   border-radius: 3px;
   cursor: pointer;

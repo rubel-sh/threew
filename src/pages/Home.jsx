@@ -20,6 +20,8 @@ import HistoryTable from "../components/HistoryTable";
 const Home = () => {
   const { selectCrypto } = useContext(StatesContext);
   const [selectedTable, setSelectedTable] = useState({});
+  const [toggleTab, setToggleTab] = useState(0);
+
   const tableData = [
     {
       id: 1,
@@ -78,6 +80,11 @@ const Home = () => {
   // Select History table we page loads
   useEffect(() => setSelectedTable(tableData[0]), []);
 
+  const handleHistoryBtn = (btn, index) => {
+    setToggleTab(index);
+    setSelectedTable(btn);
+  };
+
   return (
     <>
       <NoticeHere>Notice here</NoticeHere>
@@ -130,8 +137,11 @@ const Home = () => {
           <TransactionHistoryContainer>
             <p>Request History</p>
             <HistoryBtnTab>
-              {tableData.map((btn) => (
-                <HistoryBtn onClick={() => setSelectedTable(btn)}>
+              {tableData.map((btn, index) => (
+                <HistoryBtn
+                  onClick={() => handleHistoryBtn(btn, index)}
+                  className={`${toggleTab === index ? "active-tab" : ""}`}
+                >
                   {btn.title}
                 </HistoryBtn>
               ))}
